@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" name="name" placeholder="enter your name" />
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="date" name="DOB"  />
+        <label>Date of birth</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <input type="text" name="AGE" placeholder="enter your age" />
+
+  </div>
+
+  <!-- Text input -->
+
+  <select  name="gender">
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+  <option value="others">others</option>
+
+</select>
+  <div class="form-outline mb-4">
+    <input type="number" name="phone" placeholder="phone number" />
+
+  </div>
+
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="email" name="mail" placeholder="email"/>
+
+  </div>
+
+<div class="form-outline mb-4">
+    <input type="text" name="adress" placeholder="adress" />
+
+  </div>
+   <select  name="district">
+  <option value="eranakulam">Eranakulam</option>
+  <option value="kottyam">kottyam</option>
+  <option value="pathanamthotta">pathanamthitta</option>
+
+   </select>
+
+
+   <select  name="branch">
+  <option value="thiruvalla">thiruvalla</option>
+  <option value="mallapally">aluva</option>
+  <option value="cheganoor">edapplally</option>
+     <option value="cheganoor">chenganoor</option>
+   </select>
+
+
+   <select  name="account">
+  <option value="creditcard">credit card</option>
+  <option value="debitcard">debitcard</option>
+  <option value="checkbook">checkbook</option>
+   </select>
+
+
+
+
+
+  <!-- Checkbox -->
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" name="materials" />
+  <label class="form-check-label" for="flexCheckDefault">Debit card</label>
+</div>
+
+<!-- Checked checkbox -->
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" name="materials" checked/>
+  <label class="form-check-label" for="flexCheckChecked">Credit card</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" name="materials" checked/>
+  <label class="form-check-label" for="flexCheckChecked">cheaque book</label>
+</div>
+
+
+
+
+
+  <!-- Submit button -->
+  <button type="submit">submit</button>
+</form>
+  {% for msg in messages %}
+  <h4>{{msg}} <a href="/">click here</a> </h4>
+  {% endfor %}
+  </div>
+
+{% endblock %}
